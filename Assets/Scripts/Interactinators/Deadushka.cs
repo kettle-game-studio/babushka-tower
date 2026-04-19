@@ -30,19 +30,23 @@ public class Deadushka : Interactinator
 
     protected override void Action(PlayerController player)
     {
-        string comment = "";
+        bool saySomething = false;
         for (int i = 0; i < unlockRequests.Length; ++i)
         {
             if (unlockRequests[i])
             {
-                comment += $"{unlockTargets[i].title}: {unlockTargets[i].comment}\n";
+                player.Say($"Can I exterminate {unlockTargets[i].title}?", "You");
+                player.Say(unlockTargets[i].comment, "Deadushka");
                 unlockTargets[i].target.locked = false;
                 unlockRequests[i] = false;
+                saySomething = true;
             }
         }
-        if (comment.Length == 0)
-            comment = "Nothing to say";
+        if (!saySomething)
+        {
+            player.Say("Say something", "You");
+            player.Say("Nothing to say", "Deadushka");
+        }
 
-        player.Say(comment, "Deadushka");
     }
 }

@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public Camera playerCamera;
     public Transform arm;
     public TextMeshProUGUI dialogText;
+    public Animator animationController;
     public float mouseSpeed = 1;
     public Vector2 lookLimits = new Vector2(-60, 60);
     public float walkSpeed = 2;
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
     InputAction moveAction;
     InputAction jumpAction;
     InputAction sprintAction;
+    InputAction attackAction;
     InputAction interactAction;
     float verticalLookAngle = 0;
     Rigidbody rigidBody;
@@ -51,6 +53,7 @@ public class PlayerController : MonoBehaviour
         moveAction = playerInputMap.FindAction("Move");
         jumpAction = playerInputMap.FindAction("Jump");
         sprintAction = playerInputMap.FindAction("Sprint");
+        attackAction = playerInputMap.FindAction("Attack");
         interactAction = playerInputMap.FindAction("Interact");
     }
 
@@ -62,9 +65,17 @@ public class PlayerController : MonoBehaviour
         playerCamera.transform.localRotation = Quaternion.AngleAxis(verticalLookAngle, Vector3.left);
         transform.rotation = Quaternion.AngleAxis(lookValue.x, Vector3.up) * transform.rotation;
 
-        if (interactAction.WasPressedThisFrame())
+        bool shownPhone = animationController.GetBool("ShowPhone");
+        bool phoneButton = attackAction.WasPressedThisFrame();
+        bool armButton = interactAction.WasPressedThisFrame();
+        if (armButton)
         {
-            if (ThingInArm == null) {
+            if (ThingInArm != null)
+                Put();
+            else if (shownPhone)
+                animationController.SetBool("ShowPhone", false);
+            else
+            {
                 RaycastHit hitInfo;
                 if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hitInfo, maxInteractDistance))
                 {
@@ -73,10 +84,13 @@ public class PlayerController : MonoBehaviour
                         interactinator.Interact(this);
                 }
             }
-            else
-            {
+        }
+        else if (phoneButton)
+        {
+            if (ThingInArm != null)
                 Put();
-            }
+            else
+                animationController.SetBool("ShowPhone", !shownPhone);
         }
 
         while (dialogRecords.Count > 0 && Time.time - dialogRecords.First.Value.spawnTime > dialogRecordTtl || dialogRecords.Count > 10)
