@@ -473,7 +473,7 @@ MonoBehaviour:
   runSpeed: 6
   jumpHeight: 1.5
   jumpAngle: 70
-  maxInteractDistance: 1.5
+  maxInteractDistance: 2
   dialogRecordTtl: 8
   textTransparencyCurve:
     serializedVersion: 2
