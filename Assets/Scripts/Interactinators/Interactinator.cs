@@ -10,7 +10,7 @@ public class Interactinator : MonoBehaviour
     public void Interact(PlayerController player)
     {
         if (locked) {
-            player.Say(lockText);
+            player.Say(player.gameState.GetString(lockText));
             if (unlockRequest != null)
                 unlockRequest(player);
         }
