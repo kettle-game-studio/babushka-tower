@@ -6,18 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class Deadushka : Interactinator
 {
-    [Serializable]
-    public struct unlockTarget
-    {
-        public Interactinator target;
-        public string request;
-        public string response;
-    }
-
-    public unlockTarget[] unlockTargets;
     public TextMeshPro text;
     public AudioClip smokeClip;
-    bool[] unlockRequests;
     Animator animator;
     float nextBlink = 0;
     float nextSmoke = 0;
@@ -26,12 +16,6 @@ public class Deadushka : Interactinator
     {
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
-        unlockRequests = new bool[unlockTargets.Length];
-        for (int i = 0; i < unlockTargets.Length; ++i)
-        {
-            int iCache = i;
-            unlockTargets[i].target.unlockRequest = player => unlockRequests[iCache] = true;
-        }
     }
 
     void Update()
@@ -52,17 +36,14 @@ public class Deadushka : Interactinator
     {
         animator.SetTrigger("Speak");
         bool saySomething = false;
-        for (int i = 0; i < unlockRequests.Length; ++i)
+        var tooltip = player.gameState.nextThingToUnlock();
+        if (tooltip != null)
         {
-            if (unlockRequests[i])
-            {
-                player.Say(player.gameState.GetString(unlockTargets[i].request), "You");
-                player.Say(player.gameState.GetString(unlockTargets[i].response), "Deadushka");
-                unlockTargets[i].target.locked = false;
-                unlockRequests[i] = false;
-                saySomething = true;
-            }
+            player.Say(player.gameState.GetString($"{tooltip}_request"), "You");
+            player.Say(player.gameState.GetString($"{tooltip}_response"), "Deadushka");
+            saySomething = true;
         }
+
         if (!saySomething)
         {
             player.Say("Say something", "You");

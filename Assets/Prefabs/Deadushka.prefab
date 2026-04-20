@@ -134,13 +134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ea06a5d7e5da2d41abaf4dbeff6f1be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Deadushka
-  tooltip: 
+  tooltip: Dedushka
   locked: 0
-  lockText: 
-  unlockTargets:
-  - target: {fileID: 0}
-    request: lenin_request
-    response: lenin_response
   text: {fileID: 0}
   smokeClip: {fileID: 8300000, guid: 10401314a131f2e4d9c76e6db95c368f, type: 3}
 --- !u!136 &5609826016947209183
