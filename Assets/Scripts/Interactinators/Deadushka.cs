@@ -16,15 +16,16 @@ public class Deadushka : Interactinator
 
     public unlockTarget[] unlockTargets;
     public TextMeshPro text;
+    public AudioClip smokeClip;
     bool[] unlockRequests;
     Animator animator;
     float nextBlink = 0;
     float nextSmoke = 0;
-
+    AudioSource audioSource;
     void Start()
     {
         animator = GetComponent<Animator>();
-
+        audioSource = GetComponent<AudioSource>();
         unlockRequests = new bool[unlockTargets.Length];
         for (int i = 0; i < unlockTargets.Length; ++i)
         {
@@ -67,6 +68,11 @@ public class Deadushka : Interactinator
             player.Say("Say something", "You");
             player.Say("Nothing to say", "Deadushka");
         }
+    }
 
+    public void StartSmoke(AnimationEvent ev)
+    {
+        audioSource.clip = smokeClip;
+        audioSource.Play();
     }
 }
