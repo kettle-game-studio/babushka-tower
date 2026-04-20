@@ -112,7 +112,11 @@ public class PlayerController : MonoBehaviour
                 animationController.SetBool("ShowPhone", !shownPhone);
         }
 
-        while (dialogRecords.Count > 0 && Time.time - dialogRecords.First.Value.spawnTime > dialogRecordTtl || dialogRecords.Count > 10)
+        while (dialogRecords.Count > 10 ||
+                dialogRecords.Count > 0 &&
+                dialogRecords.First.Value.spawnTime > 0 &&
+                Time.time - dialogRecords.First.Value.spawnTime > dialogRecordTtl
+            )
             dialogRecords.RemoveFirst();
 
         string dialogString = "";
@@ -136,8 +140,8 @@ public class PlayerController : MonoBehaviour
             string hexValue = ((int)(transparencyValue * 255)).ToString("X2");
             dialogString +=
                 record.writer == null ?
-                $"<color=#949494><alpha=#{hexValue}>{text}\n" :
-                $"<color=#852421><alpha=#{hexValue}>{record.writer}: <color=#949494><alpha=#{hexValue}>{text}\n";
+                $"<color=#E0D7B9><alpha=#{hexValue}>{text}\n" :
+                $"<color=#D9D9D9><alpha=#{hexValue}>{record.writer}: <color=#E0D7B9><alpha=#{hexValue}>{text}\n";
 
             prevRecordWritten = recordWritten;
         }
