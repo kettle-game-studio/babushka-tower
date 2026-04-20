@@ -88,6 +88,12 @@ public class GameState : MonoBehaviour
         return StringMap[k];
     }
 
+    public bool HasString(string key)
+    {
+        var k = key.ToLower();
+        return StringMap.ContainsKey(k);
+    }
+
     public bool TouchObject(string tooltip)
     {
         var t = tooltip.ToLower();

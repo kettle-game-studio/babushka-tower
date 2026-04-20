@@ -8,6 +8,8 @@ public class Deadushka : Interactinator
 {
     public TextMeshPro text;
     public AudioClip smokeClip;
+    public AudioClip[] yesClips;
+    public AudioClip[] noClips;
     Animator animator;
     float nextBlink = 0;
     float nextSmoke = 0;
@@ -32,6 +34,10 @@ public class Deadushka : Interactinator
         }
     }
 
+    private AudioClip randomClip(AudioClip[] clips)
+    {
+        return clips[UnityEngine.Random.Range(0, clips.Length-1)];
+    }
     protected override void Action(PlayerController player)
     {
         animator.SetTrigger("Speak");
@@ -39,6 +45,8 @@ public class Deadushka : Interactinator
         var tooltip = player.gameState.nextThingToUnlock();
         if (tooltip != null)
         {
+            audioSource.clip = randomClip(player.gameState.HasString($"{tooltip}_comment") ? noClips:yesClips);
+            audioSource.Play();
             player.Say(player.gameState.GetString($"{tooltip}_request"), "You");
             player.Say(player.gameState.GetString($"{tooltip}_response"), "Deadushka");
             saySomething = true;
@@ -53,6 +61,7 @@ public class Deadushka : Interactinator
 
     public void StartSmoke(AnimationEvent ev)
     {
+        if(audioSource.isPlaying) return;
         audioSource.clip = smokeClip;
         audioSource.Play();
     }

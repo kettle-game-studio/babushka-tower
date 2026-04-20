@@ -138,6 +138,14 @@ MonoBehaviour:
   locked: 0
   text: {fileID: 0}
   smokeClip: {fileID: 8300000, guid: 10401314a131f2e4d9c76e6db95c368f, type: 3}
+  yesClips:
+  - {fileID: 8300000, guid: a42111bc3fef7ea45a6b794e99d3e228, type: 3}
+  - {fileID: 8300000, guid: 9d11c8f367bfbf94eb38bb69767ef561, type: 3}
+  - {fileID: 8300000, guid: 77013f1d8aa245e43821b33399ffb6fa, type: 3}
+  - {fileID: 8300000, guid: 3014235d7a0336146be113beefeccfe9, type: 3}
+  noClips:
+  - {fileID: 8300000, guid: 6925c41a454ae3949b3904a7f0ae85e2, type: 3}
+  - {fileID: 8300000, guid: 8f5ed1b0464c5cd44ac96f06779ce162, type: 3}
 --- !u!136 &5609826016947209183
 CapsuleCollider:
   m_ObjectHideFlags: 0
