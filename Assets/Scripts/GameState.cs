@@ -15,6 +15,8 @@ public class GameState : MonoBehaviour
         "das kapital",
         "icon",
         "plank",
+        "cellar door",
+        "garage door",
     };
 
     public List<string> listToUnlock = new();
@@ -29,26 +31,35 @@ public class GameState : MonoBehaviour
             { "lenin_response", "Noo! It's my beloved theorist of Marxism-Leninism! Don' t you dare desecrate his portrait!" },
             { "lenin_comment", "Shoot, he does love Lenin this much" },
 
-            { "can_lock", "" },
-            { "detective novel_lock", "" },
+            // { "can_lock", "" },
+            // { "detective novel_lock", "" },
 
             { "icon_lock", "Hm, Babushka's icon of Holy Mother. I must ask Dedushka before preceding." },
             { "icon_request", "Hi, Dedushka! I am thinking about using Icon of Holy Mother, is this ok?" },
-            { "icon_response", "Of course, Vnuchek, enjoy yourself!" }, 
+            { "icon_response", "Of course, Vnuchek, enjoy yourself!" },
 
             { "das kapital_lock", "Hmm, maybe I should ask Dedushka first..." },
             { "das kapital_request", "Can i, pretty please, take your copy of Das Kapital for a second?" },
             { "das kapital_response", "Fine! But you should read it. Marx had an outstanding view on materialism!" },
 
-            { "pillow", "" },
+            // { "pillow", "" },
 
             { "plank_lock", "I think, Dedushka wanted to build something of these. I must ask first" },
             { "plank_request", "Do you still need those old planks?" },
             { "plank_response", "Of course I need them! You can play, but return them back afterwards" },
 
-            { "stool_lock", "" },
+            // { "stool_lock", "" },
+            // { "stump_lock", "" }
 
-            { "stump_lock", "" }
+            { "cellar door_lock", "There are 100% some useful tower-things in the cellar. I must ask for permission." },
+            { "cellar door_request", "Hi Ded, can I descend down to the underground?" },
+            { "cellar door_response", "What for, Vnuchek? You'd better play here, on the surface" },
+            { "cellar door_comment", "Well, I guess today I'm not visiting cellar" },
+            
+            { "garage door_lock", "What terrible old secrets are hidden behind this code lock? We might never know" },
+            { "garage door_request", "Dedushka, what is the garage door code? I want to look inside" },
+            { "garage door_response", "I'm sorry, Vnuchek, but I don't remember. We should wait for your Babushka." },
+            { "garage door_comment", "All right then, keep your secrets" },
         };
     }
 

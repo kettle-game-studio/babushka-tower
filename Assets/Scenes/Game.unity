@@ -418,6 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a4e880471c10694cb4607f6bd5fad4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameState
+  listToUnlock: []
 --- !u!4 &89014619 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4558244737044017693, guid: afaf5b19af7594eec9a21556c562f2b6, type: 3}
@@ -5611,6 +5612,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f98c2e06f4a336573a30eb04392dd287, type: 3}
+--- !u!1001 &370406338
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5835576523355267982, guid: 0ae859f2233182c6191c8680810d39da, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.897
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835576523355267982, guid: 0ae859f2233182c6191c8680810d39da, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.2744634
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835576523355267982, guid: 0ae859f2233182c6191c8680810d39da, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.204058
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835576523355267982, guid: 0ae859f2233182c6191c8680810d39da, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835576523355267982, guid: 0ae859f2233182c6191c8680810d39da, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835576523355267982, guid: 0ae859f2233182c6191c8680810d39da, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835576523355267982, guid: 0ae859f2233182c6191c8680810d39da, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835576523355267982, guid: 0ae859f2233182c6191c8680810d39da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835576523355267982, guid: 0ae859f2233182c6191c8680810d39da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835576523355267982, guid: 0ae859f2233182c6191c8680810d39da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609016246585489716, guid: 0ae859f2233182c6191c8680810d39da, type: 3}
+      propertyPath: m_Name
+      value: Lighthouse
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0ae859f2233182c6191c8680810d39da, type: 3}
 --- !u!4 &393449145 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2657665090655024558, guid: f98c2e06f4a336573a30eb04392dd287, type: 3}
@@ -6652,14 +6710,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8567267513132594310, guid: 7b985e727d6ae2e4db2da5014d340859, type: 3}
-      propertyPath: far clip plane
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 7195283539347360257, guid: 7b985e727d6ae2e4db2da5014d340859, type: 3}
       propertyPath: gameState
       value: 
       objectReference: {fileID: 83124356}
+    - target: {fileID: 8567267513132594310, guid: 7b985e727d6ae2e4db2da5014d340859, type: 3}
+      propertyPath: far clip plane
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9094,6 +9152,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -228.149
       objectReference: {fileID: 0}
+    - target: {fileID: 5228829047915741053, guid: 8b726916b1afff742900e4aad798fadf, type: 3}
+      propertyPath: tooltip
+      value: Cellar Door
+      objectReference: {fileID: 0}
     - target: {fileID: 5338886737455661306, guid: 8b726916b1afff742900e4aad798fadf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -9707,3 +9769,4 @@ SceneRoots:
   - {fileID: 5997015112652841073}
   - {fileID: 6629659406428303579}
   - {fileID: 318836015}
+  - {fileID: 370406338}

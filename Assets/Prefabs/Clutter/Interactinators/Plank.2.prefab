@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Takablinator
   tooltip: Plank
-  locked: 0
+  locked: 1
 --- !u!54 &689057436249811231
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -131,12 +131,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ea06a5d7e5da2d41abaf4dbeff6f1be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Deadushka
+  tooltip: Dedushka
   locked: 0
-  lockText: 
-  unlockTargets:
-  - target: {fileID: 0}
-    request: lenin_request
-    response: lenin_response
   text: {fileID: 0}
 --- !u!136 &5609826016947209183
 CapsuleCollider:

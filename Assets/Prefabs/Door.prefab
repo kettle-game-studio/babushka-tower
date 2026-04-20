@@ -150,9 +150,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd0597fe9928654cb6d68586e89011a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
-  tooltip: 
+  tooltip: Cellar Door
   locked: 0
-  lockText: 
+  DoorSecondFactorUnlocked: 0
 --- !u!82 &3453969048275676095
 AudioSource:
   m_ObjectHideFlags: 0

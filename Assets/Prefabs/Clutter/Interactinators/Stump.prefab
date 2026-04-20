@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Takablinator
   tooltip: Stump
-  locked: 1
+  locked: 0
 --- !u!54 &3101660855800532448
 Rigidbody:
   m_ObjectHideFlags: 0
