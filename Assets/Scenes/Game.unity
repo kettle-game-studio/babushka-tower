@@ -515,9 +515,9 @@ MonoBehaviour:
   player: {fileID: 83124358}
   deadushka: {fileID: 32360417}
   stateHeight:
-  - 1
-  - 2
-  - 3
+  - 5
+  - 7
+  - 10
   - 500
   cellarDoors:
   - {fileID: 996881216}
